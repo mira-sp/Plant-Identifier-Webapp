@@ -10,6 +10,14 @@ function bufferToBase64(buffer) {
   return btoa(binary);
 }
 
+
+if (!process.env.GOOGLE_GEMINI_API_KEY) {
+  return NextResponse.json(
+    { error: 'Server configuration error' },
+    { status: 500 }
+  );
+}
+
 export async function POST(request) {
   try {
     const formData = await request.formData();
