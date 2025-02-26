@@ -1,12 +1,36 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function ImageUploader({ onImageUpload, isLoading }) {
   const [preview, setPreview] = useState(null)
   const [dragActive, setDragActive] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const fileInputRef = useRef(null)
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    setIsVisible(true)
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      })
+    }, { threshold: 0.1 })
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current)
+      }
+    }
+  }, [])
 
   const handleFile = (file) => {
     if (!file) return
@@ -59,11 +83,18 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div 
+      ref={containerRef}
+      className={`w-full max-w-md mx-auto transition-all duration-1000 transform ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+      }`}
+    >
       <div
-        className={`card border-2 border-dashed p-8 text-center ${
-          dragActive ? 'border-primary-500 bg-primary-50' : 'border-gray-300'
-        } transition-colors duration-200 cursor-pointer relative`}
+        className={`relative overflow-hidden rounded-xl border-2 border-dashed p-8 text-center transition-all duration-300 ${
+          dragActive 
+            ? 'border-primary bg-primary/5 scale-105' 
+            : 'border-border hover:border-primary/50 hover:bg-secondary/50'
+        } cursor-pointer`}
         onClick={handleClick}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -71,6 +102,10 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
         onDrop={handleDrop}
         aria-label="Drop zone for plant images"
       >
+        {/* Decorative background elements */}
+        <div className="absolute -right-12 -bottom-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+        <div className="absolute -left-12 -top-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+
         <input
           ref={fileInputRef}
           type="file"
@@ -81,47 +116,26 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
         />
         
         {!preview ? (
-          <>
-            <div className="flex justify-center mb-4">
-              <svg className="w-16 h-16 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+          <div className="relative z-10">
+            <div className="flex justify-center mb-6">
+              <div className="relative h-16 w-16 animate-float">
+                <svg className="w-full h-full text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 18V15M12 18V12M17 18V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
             </div>
-            <h3 className="text-lg font-medium text-gray-700 mb-1">Upload a plant image</h3>
-            <p className="text-sm text-gray-500 mb-4">Drag and drop or click to browse</p>
-            <button
-              type="button"
-              className="btn-primary w-full max-w-xs mx-auto"
-              disabled={isLoading}
-            >
-              Select Image
-            </button>
-          </>
-        ) : (
-          <div className="relative">
-            <div className="relative h-64 w-full rounded-lg overflow-hidden mb-4">
-              <Image
-                src={preview}
-                alt="Plant preview"
-                fill
-                style={{ objectFit: 'contain' }}
-              />
-            </div>
-            <button
-              type="button" 
-              className="btn-primary"
-              onClick={(e) => {
-                e.stopPropagation()
-                setPreview(null)
-                onImageUpload(null)
-              }}
-              disabled={isLoading}
-            >
-              Change Image
-            </button>
           </div>
-        )}
-      </div>
+          <p className="text-sm text-gray-500">Drag & drop an image here</p>
+        </div>
+      ) : (
+        <div className="relative z-10">
+          <img
+            src={preview}
+            alt="Preview"
+            className="max-w-full h-auto rounded-lg"
+          />
+        </div>
+      )}
     </div>
-  )
-}
+  </div>
+)}
