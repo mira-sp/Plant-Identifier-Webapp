@@ -11,14 +11,15 @@ function bufferToBase64(buffer) {
 }
 
 
-if (!process.env.GOOGLE_GEMINI_API_KEY) {
-  return NextResponse.json(
-    { error: 'Server configuration error' },
-    { status: 500 }
-  );
-}
+
 
 export async function POST(request) {
+  if (!process.env.GOOGLE_GEMINI_API_KEY) {
+    return NextResponse.json(
+      { error: 'Server configuration error' },
+      { status: 500 }
+    );
+  }
   try {
     const formData = await request.formData();
     const imageFile = formData.get('image');
