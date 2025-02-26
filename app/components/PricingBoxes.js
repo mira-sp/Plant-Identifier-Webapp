@@ -1,5 +1,5 @@
 // components/PricingBoxes.jsx
-export function PricingBoxes() {
+export default function PricingBoxes() {
     return (
       <div className="flex flex-col md:flex-row justify-center gap-6 my-8">
         <div className="bg-white shadow-lg p-6 rounded-lg border w-full md:w-1/3">

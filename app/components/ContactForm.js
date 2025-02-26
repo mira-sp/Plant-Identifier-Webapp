@@ -1,5 +1,7 @@
 // components/ContactForm.jsx
 import { useState } from 'react';
+import GradientButton from "./GradientButton";
+
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -20,8 +22,9 @@ export default function ContactForm() {
         <input type="text" name="name" placeholder="Name" onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />
         <input type="email" name="email" placeholder="Email" onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />
         <textarea name="message" placeholder="Tell me about your project..." onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Send</button>
+        
       </form>
+      <GradientButton />
     </div>
   );
 }

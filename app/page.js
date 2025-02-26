@@ -6,8 +6,10 @@ import Footer from "./components/Footer";
 import ImageUploader from "./components/ImageUploader";
 import PlantInfo from "./components/PlantInfo";
 import LoadingState from "./components/LoadingState";
-import PricingBox from "./components/PricingBox";
+import PricingBox from "./components/PricingBoxes";
 import ContactForm from "./components/ContactForm";
+
+
 
 export default function Home() {
   const [plantData, setPlantData] = useState(null);
@@ -187,6 +189,7 @@ export default function Home() {
           {" "}
           <ContactForm />
         </div>
+     
       </main>
       <Footer />
     </>

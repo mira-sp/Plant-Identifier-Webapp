@@ -14,7 +14,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.8",
     "dotenv": "^16.4.7",
-    "next": "14.0.4",
+    "next": "^15.1.7",
     "patch-package": "^8.0.0",
     "react": "^18",
     "react-dom": "^18",
