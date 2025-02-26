@@ -1,7 +1,7 @@
 Welcome to my Plant Identifier Webapp
 
 Technologie-Stack:
-- Frontend: Next.js 14 React Framework mit Node.js & Tailwind CSS
+- Frontend: Next.js React Framework mit Node.js & Tailwind CSS
 - Backend: API-Route without a seperate Server
 - KI:  Google Gemini API for plant identification
 
