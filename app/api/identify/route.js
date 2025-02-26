@@ -28,7 +28,7 @@ export async function POST(request) {
     const mimeType = imageFile.type;
     
     // Initialize the Gemini API client with the API key from environment variables
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GOOGLE_GEMINI_API_KEY;
     if (!apiKey) {
       throw new Error('API key is missing');
     }
