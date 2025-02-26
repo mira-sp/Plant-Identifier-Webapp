@@ -16,7 +16,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto">
+    <div className="bg-white shadow-ld rounded-lg border p-6 max-w-md mx-auto gap-6 my-8">
       <h2 className="text-xl font-bold mb-4">Say Hello</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Name" onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />

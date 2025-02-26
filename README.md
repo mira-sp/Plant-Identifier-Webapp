@@ -2,6 +2,7 @@ Welcome to my Plant Identifier Webapp
 
 Technologie-Stack:
 - Frontend: Next.js 14 React Framework mit Node.js & Tailwind CSS
+- Camera and Upload: Uses the navigator.mediaDevices.getUserMedia() API 
 - Backend: API-Route without a seperate Server
 - KI:  Google Gemini API for plant identification
 

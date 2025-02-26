@@ -16,7 +16,7 @@ export default function PlantInfo({ plantData }) {
   ]
 
   return (
-    <div className="card w-full max-w-2xl mx-auto">
+    <div className="card w-full max-w-2xl mx-auto bg-white shadow-lg p-6 rounded-lg border ">
       <div className="flex items-center mb-6">
         <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mr-4">
           <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
