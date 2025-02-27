@@ -7,11 +7,12 @@ export default function PlantInfo({ plantData }) {
   
   if (!plantData) return null
 
-  const { name, scientificName, description, careInfo, funFacts } = plantData
+  const { name, scientificName, description, careInfo, funFacts , nativeRegions = [] }= plantData
   
   const tabs = [
     { id: 'overview', label: 'Overview' },
     { id: 'care', label: 'Care Info' },
+    { id: 'map', label: 'Native Regions' },
     { id: 'facts', label: 'Fun Facts' }
   ]
 
@@ -68,7 +69,11 @@ export default function PlantInfo({ plantData }) {
             </ul>
           </div>
         )}
-
+         {activeTab === 'map' && (
+          <div className="-mx-6">
+            <PlantMap regions={nativeRegions} />
+          </div>
+        )}
         {activeTab === 'facts' && (
           <div>
             <ul className="list-disc list-inside space-y-2">

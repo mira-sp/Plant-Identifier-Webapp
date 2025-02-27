@@ -74,6 +74,7 @@ export async function POST(request) {
       - description: A paragraph describing the plant
       - careInfo: Object with care information including light, water, temperature, soil, and humidity requirements
       - funFacts: Array of 3-5 interesting facts about the plant
+      - nativeRegions: Array of regions where this plant is native to. Only include from these options: "North America", "South America", "Europe", "Africa", "Asia", "Australia". If unknown, provide an empty array.
 
       Return ONLY valid JSON with no extra text.
     `;
