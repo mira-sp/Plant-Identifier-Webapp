@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import PlantMap from './PlantMap' 
 
 export default function PlantInfo({ plantData }) {
   const [activeTab, setActiveTab] = useState('overview')
