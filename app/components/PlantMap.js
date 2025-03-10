@@ -1,7 +1,13 @@
-'use client'
+'use client';
 
-import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
+import dynamic from 'next/dynamic';
+import 'leaflet/dist/leaflet.css';
+
+// Dynamisch laden, um SSR zu deaktivieren
+const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
+const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
+const CircleMarker = dynamic(() => import('react-leaflet').then(mod => mod.CircleMarker), { ssr: false });
+const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
 const regionCoordinates = {
   'North America': [50, -100],
@@ -10,11 +16,11 @@ const regionCoordinates = {
   Africa: [0, 20],
   Asia: [30, 100],
   Australia: [-25, 135]
-}
+};
 
 export default function PlantMap({ regions }) {
   if (!regions || regions.length === 0) {
-    return <p className="text-gray-500">No native regions available.</p>
+    return <p className="text-gray-500">No native regions available.</p>;
   }
 
   return (
@@ -24,14 +30,14 @@ export default function PlantMap({ regions }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       {regions.map((region) => {
-        const coords = regionCoordinates[region]
-        if (!coords) return null
+        const coords = regionCoordinates[region];
+        if (!coords) return null;
         return (
           <CircleMarker key={region} center={coords} radius={8} color="green">
             <Popup>{region}</Popup>
           </CircleMarker>
-        )
+        );
       })}
     </MapContainer>
-  )
+  );
 }
