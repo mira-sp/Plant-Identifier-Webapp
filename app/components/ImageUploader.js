@@ -141,7 +141,7 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full max-w-md mx-auto transition-transform duration-300 hover:scale-[1.01]">
       <canvas ref={canvasRef} className="hidden"></canvas>
       
       {cameraActive ? (
@@ -156,7 +156,7 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
             <div className="mt-4 flex justify-center space-x-4">
               <button
                 type="button"
-                className="btn-primary"
+                className="btn-primary transition-transform duration-200 hover:scale-105"
                 onClick={capturePhoto}
                 disabled={isLoading}
               >
