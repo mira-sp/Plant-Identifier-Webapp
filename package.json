@@ -13,6 +13,7 @@
     "@google/generative-ai": "^0.2.1",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.8",
+    "animejs": "^3.2.2",
     "dotenv": "^16.4.7",
     "leaflet": "^1.9.4",
     "next": "^15.1.7",

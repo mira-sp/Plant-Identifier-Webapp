@@ -1,111 +1,107 @@
 'use client';
+import anime from 'animejs';
 
 /**
- * Creates a staggered animation for child elements
+ * Creates a staggered animation for child elements using anime.js
  * @param {Array} elements - Array of DOM elements
  * @param {Object} options - Animation options
  */
 export function staggerAnimation(elements, options = {}) {
-  const { delay = 0.1, initialDelay = 0, className = 'fade-in' } = options;
-  
-  elements.forEach((element, index) => {
-    setTimeout(() => {
-      element.classList.add(className);
-    }, initialDelay * 1000 + index * delay * 1000);
+  anime({
+    targets: elements,
+    opacity: [0, 1],
+    translateY: [20, 0],
+    delay: anime.stagger(options.delay * 1000 || 100, { start: options.initialDelay * 1000 || 0 }),
+    easing: 'easeOutQuad',
+    duration: 800
   });
 }
 
 /**
- * Adds animation classes when element comes into view
+ * Adds animation when element comes into view using anime.js
  * @param {HTMLElement} element - The element to observe
- * @param {string} animationClass - The animation class to add
+ * @param {Object} options - Animation options
  */
-export function animateOnScroll(element, animationClass = 'fade-in') {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(animationClass);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-  
+export function animateOnScroll(element, options = {}) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [20, 0],
+          duration: 1000,
+          easing: 'easeOutQuad'
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
   observer.observe(element);
-  
-  return () => {
-    if (element) observer.unobserve(element);
-  };
+  return () => observer.unobserve(element);
 }
 
 /**
- * Creates a parallax effect on scroll
+ * Creates a parallax effect on scroll using anime.js
  * @param {HTMLElement} element - The element to apply parallax to
  * @param {number} speed - The parallax speed
  */
 export function parallaxEffect(element, speed = 0.5) {
   function updatePosition() {
-    const scrollPosition = window.pageYOffset;
-    const elementOffset = element.offsetTop;
-    const distance = scrollPosition - elementOffset;
-    
-    element.style.transform = `translateY(${distance * speed}px)`;
+    anime({
+      targets: element,
+      translateY: window.pageYOffset * speed,
+      duration: 0,
+      easing: 'linear'
+    });
   }
-  
+
   window.addEventListener('scroll', updatePosition);
-  
-  return () => {
-    window.removeEventListener('scroll', updatePosition);
-  };
+  return () => window.removeEventListener('scroll', updatePosition);
 }
 
 /**
- * Applies a typewriter effect to text
+ * Applies a typewriter effect to text using anime.js
  * @param {HTMLElement} element - The element to apply the effect to
  * @param {string} text - The text to type
  * @param {Object} options - Typewriter options
  */
 export function typewriterEffect(element, text, options = {}) {
-  const { speed = 50, delay = 0 } = options;
-  let index = 0;
-  
   element.textContent = '';
-  
-  setTimeout(() => {
-    const interval = setInterval(() => {
-      if (index < text.length) {
-        element.textContent += text.charAt(index);
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, speed);
-    
-    return () => clearInterval(interval);
-  }, delay);
+
+  anime({
+    targets: element,
+    textContent: text,
+    round: 1,
+    duration: text.length * (options.speed || 50),
+    easing: 'linear',
+    delay: options.delay || 0
+  });
 }
 
 /**
- * Creates a ripple effect on element click
+ * Creates a ripple effect on element click using anime.js
  * @param {HTMLElement} element - The element to apply the ripple to
  */
 export function rippleEffect(element) {
   element.addEventListener('click', (e) => {
     const rect = element.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
     const ripple = document.createElement('span');
     ripple.classList.add('ripple');
-    ripple.style.left = `${x}px`;
-    ripple.style.top = `${y}px`;
     
+    ripple.style.left = `${e.clientX - rect.left}px`;
+    ripple.style.top = `${e.clientY - rect.top}px`;
+
     element.appendChild(ripple);
-    
-    setTimeout(() => {
-      ripple.remove();
-    }, 600);
+
+    anime({
+      targets: ripple,
+      scale: [0, 4],
+      opacity: [1, 0],
+      duration: 600,
+      easing: 'easeOutQuad',
+      complete: () => ripple.remove()
+    });
   });
 }
