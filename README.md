@@ -1,42 +1,105 @@
-Welcome to my Plant Identifier Webapp
 
-Technologie-Stack:
-- Frontend: Next.js 15 React Framework mit Node.js, Tailwind CSS, Leaflet und Anime.js
-- Camera and Upload: Uses the navigator.mediaDevices.getUserMedia() API 
-- Frontend: Next.js React Framework mit Node.js & Tailwind CSS
-- Backend: API-Route without a seperate Server
-- KI:  Google Gemini API for plant identification
+# 🌿 Plant Identifier Webapp
 
+Eine moderne Webanwendung zur Pflanzenidentifikation mithilfe von Künstlicher Intelligenz. Nutzer können ein Pflanzenbild hochladen oder direkt mit der Kamera aufnehmen. Die App analysiert das Bild mit der **Google Gemini API** und liefert detaillierte Informationen zur Pflanze.
 
-Docs:
-- [Next.js Documentation](https://nextjs.org/docs) 
-- [Tailwind Documentation](https://tailwindcss.com/docs/installation/using-vite)
-- [Google Gemini API](https://ai.google.dev/?utm_source=website&utm_medium=referral&utm_campaign=geminichat&utm_content)
+🔗 **Live-Demo:** [plant-identifier-webapp.vercel.app](https://plant-identifier-webapp.vercel.app)
 
-Detailed Keypoints:
+---
 
-1. Simple, Intuitive Interface:
-    - Immediate image upload option on landing
-    - Drag-and-drop or click-to-browse functionality
-    - Clear visual feedback during the identification process
+## 🚀 Features
 
-2. Modern, Responsive Design:
-    - Uses Tailwind CSS for styling
-    - Mobile-first approach
-    - Accessible UI components
-    - Responsive layout that works on all device sizes
+- 📷 **Bildaufnahme & Upload:** Unterstützt sowohl Kameraaufnahmen als auch das Hochladen von Bildern.
+- 🤖 **KI-gestützte Pflanzenidentifikation:** Verwendet die Google Gemini API zur Analyse und Erkennung von Pflanzen.
+- 📋 **Detaillierte Pflanzeninformationen:** Zeigt den deutschen und wissenschaftlichen Namen, Pflegehinweise (z. B. Wasserbedarf, Lichtverhältnisse), Herkunft, Wachstumsrate und weitere relevante Details an.
+- 🗺️ **Kartenintegration:** Verwendet Leaflet zur Anzeige von Pflanzenstandorten oder Herkunftsregionen.
+- 🎨 **Animiertes UI:** Setzt Anime.js für flüssige und ansprechende Animationen ein.
 
-3. Plant Identification:
-    - Uses Google's Gemini API for accurate plant identification
-    - Returns comprehensive plant information including common name, scientific name, description, and care instructions
-    - Organized in a tabbed interface for better information architecture
+---
 
-4. Technical Details:
-    - Built with Next.js 14 using the app directory structure
-    - Server-side API route for secure handling of the Gemini API calls
-    - Client-side state management using React hooks
-    - Image processing and preview functionality
+## 🛠️ Technologie-Stack
 
-5. Performance Optimizations:
-    - Uses Next.js Image component for optimized image loading
-    - Client-side component hydration for better user experience
+- **Frontend:** Next.js 15 (React Framework)
+- **Styling:** Tailwind CSS
+- **Karten:** Leaflet
+- **Animationen:** Anime.js
+- **Bildaufnahme:** `navigator.mediaDevices.getUserMedia()` API
+- **KI-Service:** Google Gemini API
+
+---
+
+## ⚙️ Installation & Entwicklung
+
+### Voraussetzungen
+
+- Node.js (v16 oder höher)
+- npm oder yarn
+- Google Gemini API-Schlüssel
+
+### Schritte
+
+1. Repository klonen:
+
+   ```bash
+   git clone https://github.com/parwely/Plant-Identifier-Webapp.git
+   cd Plant-Identifier-Webapp
+   ```
+
+2. Abhängigkeiten installieren:
+
+   ```bash
+   npm install
+   # oder
+   yarn install
+   ```
+
+3. Umgebungsvariablen konfigurieren:
+
+   Erstelle eine `.env.local`-Datei im Projektverzeichnis mit folgendem Inhalt:
+
+   ```env
+   GEMINI_API_KEY=dein-google-api-schlüssel
+   ```
+
+4. Entwicklungsserver starten:
+
+   ```bash
+   npm run dev
+   # oder
+   yarn dev
+   ```
+
+   Die Anwendung ist nun unter `http://localhost:3000` erreichbar.
+
+---
+
+## 📁 Projektstruktur
+
+```
+├── app/                  # Hauptkomponenten und Seiten
+├── public/               # Statische Assets
+├── .config/              # Konfigurationsdateien
+├── tailwind.config.ts    # Tailwind CSS-Konfiguration
+├── next.config.js        # Next.js-Konfiguration
+├── package.json          # Projektmetadaten und Abhängigkeiten
+├── .env.local            # Umgebungsvariablen (nicht im Repository enthalten)
+```
+
+---
+
+## 📷 Beispielausgabe
+
+Nach dem Hochladen eines Pflanzenbildes zeigt die Anwendung beispielsweise:
+
+- **Deutscher Name:** Gummibaum
+- **Wissenschaftlicher Name:** *Ficus elastica*
+- **Pflegehinweise:** Mäßig gießen, indirektes Licht, durchlässiger Boden
+- **Herkunft:** Südostasien
+- **Wachstumsrate:** Mittel
+- **Besonderheiten:** Luftreinigende Eigenschaften, milchiger Pflanzensaft
+
+---
+
+## 🧠 KI-Integration
+
+Die Anwendung nutzt die **Google Gemini API**, um hochgeladene Bilder zu analysieren und relevante Pflanzeninformationen zu extrahieren. Weitere Informationen zur API findest du in der [Google Gemini API-Dokumentation](https://ai.google.dev).
