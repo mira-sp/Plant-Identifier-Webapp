@@ -28,50 +28,6 @@ Eine moderne Webanwendung zur Pflanzenidentifikation mithilfe von Künstlicher I
 
 ---
 
-## ⚙️ Installation & Entwicklung
-
-### Voraussetzungen
-
-- Node.js (v16 oder höher)
-- npm oder yarn
-- Google Gemini API-Schlüssel
-
-### Schritte
-
-1. Repository klonen:
-
-   ```bash
-   git clone https://github.com/parwely/Plant-Identifier-Webapp.git
-   cd Plant-Identifier-Webapp
-   ```
-
-2. Abhängigkeiten installieren:
-
-   ```bash
-   npm install
-   # oder
-   yarn install
-   ```
-
-3. Umgebungsvariablen konfigurieren:
-
-   Erstelle eine `.env.local`-Datei im Projektverzeichnis mit folgendem Inhalt:
-
-   ```env
-   GEMINI_API_KEY=dein-google-api-schlüssel
-   ```
-
-4. Entwicklungsserver starten:
-
-   ```bash
-   npm run dev
-   # oder
-   yarn dev
-   ```
-
-   Die Anwendung ist nun unter `http://localhost:3000` erreichbar.
-
----
 
 ## 📁 Projektstruktur
 
@@ -84,8 +40,6 @@ Eine moderne Webanwendung zur Pflanzenidentifikation mithilfe von Künstlicher I
 ├── package.json          # Projektmetadaten und Abhängigkeiten
 ├── .env.local            # Umgebungsvariablen (nicht im Repository enthalten)
 ```
-
----
 
 ## 📷 Beispielausgabe
 
