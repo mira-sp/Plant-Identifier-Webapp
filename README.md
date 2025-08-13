@@ -41,7 +41,7 @@ Eine moderne Webanwendung zur Pflanzenidentifikation mithilfe von Künstlicher I
 ├── .env.local            # Umgebungsvariablen (nicht im Repository enthalten)
 ```
 
-## 📷 Beispielausgabe
+## Beispielausgabe
 
 Nach dem Hochladen eines Pflanzenbildes zeigt die Anwendung beispielsweise:
 
