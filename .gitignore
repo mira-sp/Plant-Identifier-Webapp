@@ -40,3 +40,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# eval: photos are downloaded, not committed (licences); cache is local
+/eval/data/
+/eval/cache/
