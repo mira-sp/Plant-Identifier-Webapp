@@ -1,0 +1,1091 @@
+{
+  "runId": "20261026-171641",
+  "createdAt": "2026-10-26T17:25:37.063Z",
+  "manifestEntries": 168,
+  "missingImages": 0,
+  "configs": [
+    {
+      "id": "two-stage__qwen2.5vl-7b__top3",
+      "config": {
+        "mode": "two-stage",
+        "model": "qwen2.5vl:7b",
+        "name": "top3",
+        "topK": 3,
+        "hash": "fc2f6cf450305aabf546b34958907f1f443b8880a2d68a92dd66bd5799acf369"
+      },
+      "splits": {
+        "all": {
+          "n": 28,
+          "schemaValid": {
+            "hits": 28,
+            "n": 28,
+            "rate": 1
+          },
+          "speciesTop1": {
+            "hits": 18,
+            "n": 25,
+            "rate": 0.72
+          },
+          "speciesTop3": {
+            "hits": 19,
+            "n": 25,
+            "rate": 0.76
+          },
+          "genusTop1": {
+            "hits": 20,
+            "n": 25,
+            "rate": 0.8
+          },
+          "abstention": {
+            "hits": 2,
+            "n": 3,
+            "rate": 0.6666666666666666
+          },
+          "falseAbstention": {
+            "hits": 0,
+            "n": 25,
+            "rate": 0
+          },
+          "latency": {
+            "total": {
+              "p50": 9895.8851,
+              "p95": 10941.87340500003,
+              "n": 28
+            },
+            "stages": {
+              "classify": {
+                "p50": 3219.7262999999803,
+                "p95": 3451.1972549999964,
+                "n": 28
+              },
+              "describe": {
+                "p50": 6904.959949999997,
+                "p95": 7861.030325000007,
+                "n": 26
+              }
+            }
+          },
+          "calibration": {
+            "buckets": [
+              {
+                "from": 0,
+                "to": 0.1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.1,
+                "to": 0.2,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.2,
+                "to": 0.3,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.3,
+                "to": 0.4,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.4,
+                "to": 0.5,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.5,
+                "to": 0.6,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.6,
+                "to": 0.7,
+                "n": 2,
+                "meanConfidence": 0.6,
+                "accuracy": 0.5
+              },
+              {
+                "from": 0.7,
+                "to": 0.8,
+                "n": 5,
+                "meanConfidence": 0.7,
+                "accuracy": 0.2
+              },
+              {
+                "from": 0.8,
+                "to": 0.9,
+                "n": 1,
+                "meanConfidence": 0.8,
+                "accuracy": 1
+              },
+              {
+                "from": 0.9,
+                "to": 1,
+                "n": 17,
+                "meanConfidence": 0.9000000000000002,
+                "accuracy": 0.8823529411764706
+              }
+            ],
+            "ece": 0.12800000000000017,
+            "thresholds": [
+              {
+                "threshold": 0,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.1,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.2,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.3,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.4,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.5,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.6,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.7,
+                "coverage": 0.92,
+                "accuracy": 0.7391304347826086
+              },
+              {
+                "threshold": 0.8,
+                "coverage": 0.72,
+                "accuracy": 0.8888888888888888
+              },
+              {
+                "threshold": 0.9,
+                "coverage": 0.68,
+                "accuracy": 0.8823529411764706
+              }
+            ]
+          }
+        },
+        "non-plant": {
+          "n": 3,
+          "schemaValid": {
+            "hits": 3,
+            "n": 3,
+            "rate": 1
+          },
+          "speciesTop1": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "speciesTop3": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "genusTop1": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "abstention": {
+            "hits": 2,
+            "n": 3,
+            "rate": 0.6666666666666666
+          },
+          "falseAbstention": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "latency": {
+            "total": {
+              "p50": 1473.7424000000028,
+              "p95": 9312.29816,
+              "n": 3
+            },
+            "stages": {
+              "classify": {
+                "p50": 1473.7284999999974,
+                "p95": 2214.1394200000054,
+                "n": 3
+              },
+              "describe": {
+                "p50": 7886.821599999996,
+                "p95": 7886.821599999996,
+                "n": 1
+              }
+            }
+          },
+          "calibration": {
+            "buckets": [
+              {
+                "from": 0,
+                "to": 0.1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.1,
+                "to": 0.2,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.2,
+                "to": 0.3,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.3,
+                "to": 0.4,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.4,
+                "to": 0.5,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.5,
+                "to": 0.6,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.6,
+                "to": 0.7,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.7,
+                "to": 0.8,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.8,
+                "to": 0.9,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.9,
+                "to": 1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              }
+            ],
+            "ece": null,
+            "thresholds": [
+              {
+                "threshold": 0,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.1,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.2,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.3,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.4,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.5,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.6,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.7,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.8,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.9,
+                "coverage": null,
+                "accuracy": null
+              }
+            ]
+          }
+        },
+        "public": {
+          "n": 25,
+          "schemaValid": {
+            "hits": 25,
+            "n": 25,
+            "rate": 1
+          },
+          "speciesTop1": {
+            "hits": 18,
+            "n": 25,
+            "rate": 0.72
+          },
+          "speciesTop3": {
+            "hits": 19,
+            "n": 25,
+            "rate": 0.76
+          },
+          "genusTop1": {
+            "hits": 20,
+            "n": 25,
+            "rate": 0.8
+          },
+          "abstention": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "falseAbstention": {
+            "hits": 0,
+            "n": 25,
+            "rate": 0
+          },
+          "latency": {
+            "total": {
+              "p50": 10085.695399999997,
+              "p95": 10971.421260000037,
+              "n": 25
+            },
+            "stages": {
+              "classify": {
+                "p50": 3227.14929999999,
+                "p95": 3454.937759999995,
+                "n": 25
+              },
+              "describe": {
+                "p50": 6897.556599999996,
+                "p95": 7764.544800000032,
+                "n": 25
+              }
+            }
+          },
+          "calibration": {
+            "buckets": [
+              {
+                "from": 0,
+                "to": 0.1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.1,
+                "to": 0.2,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.2,
+                "to": 0.3,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.3,
+                "to": 0.4,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.4,
+                "to": 0.5,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.5,
+                "to": 0.6,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.6,
+                "to": 0.7,
+                "n": 2,
+                "meanConfidence": 0.6,
+                "accuracy": 0.5
+              },
+              {
+                "from": 0.7,
+                "to": 0.8,
+                "n": 5,
+                "meanConfidence": 0.7,
+                "accuracy": 0.2
+              },
+              {
+                "from": 0.8,
+                "to": 0.9,
+                "n": 1,
+                "meanConfidence": 0.8,
+                "accuracy": 1
+              },
+              {
+                "from": 0.9,
+                "to": 1,
+                "n": 17,
+                "meanConfidence": 0.9000000000000002,
+                "accuracy": 0.8823529411764706
+              }
+            ],
+            "ece": 0.12800000000000017,
+            "thresholds": [
+              {
+                "threshold": 0,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.1,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.2,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.3,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.4,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.5,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.6,
+                "coverage": 1,
+                "accuracy": 0.72
+              },
+              {
+                "threshold": 0.7,
+                "coverage": 0.92,
+                "accuracy": 0.7391304347826086
+              },
+              {
+                "threshold": 0.8,
+                "coverage": 0.72,
+                "accuracy": 0.8888888888888888
+              },
+              {
+                "threshold": 0.9,
+                "coverage": 0.68,
+                "accuracy": 0.8823529411764706
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "single__qwen2.5vl-7b__top3",
+      "config": {
+        "mode": "single",
+        "model": "qwen2.5vl:7b",
+        "name": "top3",
+        "topK": 3,
+        "hash": "03c19f0ca2038af6b158bf9483b966ba526aaa600ca1f8d8d7237b2a1b210fb4"
+      },
+      "splits": {
+        "all": {
+          "n": 28,
+          "schemaValid": {
+            "hits": 28,
+            "n": 28,
+            "rate": 1
+          },
+          "speciesTop1": {
+            "hits": 19,
+            "n": 25,
+            "rate": 0.76
+          },
+          "speciesTop3": {
+            "hits": 20,
+            "n": 25,
+            "rate": 0.8
+          },
+          "genusTop1": {
+            "hits": 20,
+            "n": 25,
+            "rate": 0.8
+          },
+          "abstention": {
+            "hits": 3,
+            "n": 3,
+            "rate": 1
+          },
+          "falseAbstention": {
+            "hits": 1,
+            "n": 25,
+            "rate": 0.04
+          },
+          "latency": {
+            "total": {
+              "p50": 7213.274000000034,
+              "p95": 9097.789910000003,
+              "n": 28
+            },
+            "stages": {
+              "single": {
+                "p50": 7213.257650000014,
+                "p95": 9097.776360000014,
+                "n": 28
+              }
+            }
+          },
+          "calibration": {
+            "buckets": [
+              {
+                "from": 0,
+                "to": 0.1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.1,
+                "to": 0.2,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.2,
+                "to": 0.3,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.3,
+                "to": 0.4,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.4,
+                "to": 0.5,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.5,
+                "to": 0.6,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.6,
+                "to": 0.7,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.7,
+                "to": 0.8,
+                "n": 1,
+                "meanConfidence": 0.7,
+                "accuracy": 1
+              },
+              {
+                "from": 0.8,
+                "to": 0.9,
+                "n": 1,
+                "meanConfidence": 0.8,
+                "accuracy": 1
+              },
+              {
+                "from": 0.9,
+                "to": 1,
+                "n": 22,
+                "meanConfidence": 0.9022727272727272,
+                "accuracy": 0.7727272727272727
+              }
+            ],
+            "ece": 0.1395833333333333,
+            "thresholds": [
+              {
+                "threshold": 0,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.1,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.2,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.3,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.4,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.5,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.6,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.7,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.8,
+                "coverage": 0.9583333333333334,
+                "accuracy": 0.782608695652174
+              },
+              {
+                "threshold": 0.9,
+                "coverage": 0.9166666666666666,
+                "accuracy": 0.7727272727272727
+              }
+            ]
+          }
+        },
+        "non-plant": {
+          "n": 3,
+          "schemaValid": {
+            "hits": 3,
+            "n": 3,
+            "rate": 1
+          },
+          "speciesTop1": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "speciesTop3": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "genusTop1": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "abstention": {
+            "hits": 3,
+            "n": 3,
+            "rate": 1
+          },
+          "falseAbstention": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "latency": {
+            "total": {
+              "p50": 1324.3665000000037,
+              "p95": 1365.6962100000178,
+              "n": 3
+            },
+            "stages": {
+              "single": {
+                "p50": 1324.358499999973,
+                "p95": 1365.6876699999616,
+                "n": 3
+              }
+            }
+          },
+          "calibration": {
+            "buckets": [
+              {
+                "from": 0,
+                "to": 0.1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.1,
+                "to": 0.2,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.2,
+                "to": 0.3,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.3,
+                "to": 0.4,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.4,
+                "to": 0.5,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.5,
+                "to": 0.6,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.6,
+                "to": 0.7,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.7,
+                "to": 0.8,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.8,
+                "to": 0.9,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.9,
+                "to": 1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              }
+            ],
+            "ece": null,
+            "thresholds": [
+              {
+                "threshold": 0,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.1,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.2,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.3,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.4,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.5,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.6,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.7,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.8,
+                "coverage": null,
+                "accuracy": null
+              },
+              {
+                "threshold": 0.9,
+                "coverage": null,
+                "accuracy": null
+              }
+            ]
+          }
+        },
+        "public": {
+          "n": 25,
+          "schemaValid": {
+            "hits": 25,
+            "n": 25,
+            "rate": 1
+          },
+          "speciesTop1": {
+            "hits": 19,
+            "n": 25,
+            "rate": 0.76
+          },
+          "speciesTop3": {
+            "hits": 20,
+            "n": 25,
+            "rate": 0.8
+          },
+          "genusTop1": {
+            "hits": 20,
+            "n": 25,
+            "rate": 0.8
+          },
+          "abstention": {
+            "hits": 0,
+            "n": 0,
+            "rate": null
+          },
+          "falseAbstention": {
+            "hits": 1,
+            "n": 25,
+            "rate": 0.04
+          },
+          "latency": {
+            "total": {
+              "p50": 7383.746299999999,
+              "p95": 9145.207220000004,
+              "n": 25
+            },
+            "stages": {
+              "single": {
+                "p50": 7383.73629999999,
+                "p95": 9145.192620000009,
+                "n": 25
+              }
+            }
+          },
+          "calibration": {
+            "buckets": [
+              {
+                "from": 0,
+                "to": 0.1,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.1,
+                "to": 0.2,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.2,
+                "to": 0.3,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.3,
+                "to": 0.4,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.4,
+                "to": 0.5,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.5,
+                "to": 0.6,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.6,
+                "to": 0.7,
+                "n": 0,
+                "meanConfidence": null,
+                "accuracy": null
+              },
+              {
+                "from": 0.7,
+                "to": 0.8,
+                "n": 1,
+                "meanConfidence": 0.7,
+                "accuracy": 1
+              },
+              {
+                "from": 0.8,
+                "to": 0.9,
+                "n": 1,
+                "meanConfidence": 0.8,
+                "accuracy": 1
+              },
+              {
+                "from": 0.9,
+                "to": 1,
+                "n": 22,
+                "meanConfidence": 0.9022727272727272,
+                "accuracy": 0.7727272727272727
+              }
+            ],
+            "ece": 0.1395833333333333,
+            "thresholds": [
+              {
+                "threshold": 0,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.1,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.2,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.3,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.4,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.5,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.6,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.7,
+                "coverage": 1,
+                "accuracy": 0.7916666666666666
+              },
+              {
+                "threshold": 0.8,
+                "coverage": 0.9583333333333334,
+                "accuracy": 0.782608695652174
+              },
+              {
+                "threshold": 0.9,
+                "coverage": 0.9166666666666666,
+                "accuracy": 0.7727272727272727
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

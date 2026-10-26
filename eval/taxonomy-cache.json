@@ -1,4 +1,15 @@
 {
+  "acer japonicum": {
+    "species": "Acer japonicum",
+    "speciesKey": 3767816,
+    "genus": "Acer",
+    "genusKey": 3189834,
+    "family": "Sapindaceae",
+    "familyKey": 6657,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "acer palmatum": {
     "species": "Acer palmatum",
     "speciesKey": 3189882,
@@ -6,6 +17,50 @@
     "genusKey": 3189834,
     "family": "Sapindaceae",
     "familyKey": 6657,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "aechmea fasciata": {
+    "species": "Aechmea fasciata",
+    "speciesKey": 2698346,
+    "genus": "Aechmea",
+    "genusKey": 2697812,
+    "family": "Bromeliaceae",
+    "familyKey": 3740,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "aloe arborescens": {
+    "species": "Aloe arborescens",
+    "speciesKey": 2777537,
+    "genus": "Aloe",
+    "genusKey": 2770879,
+    "family": "Asphodelaceae",
+    "familyKey": 4259209,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "aloe ferox": {
+    "species": "Aloe ferox",
+    "speciesKey": 2777789,
+    "genus": "Aloe",
+    "genusKey": 2770879,
+    "family": "Asphodelaceae",
+    "familyKey": 4259209,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "aloe striata": {
+    "species": "Aloe striata",
+    "speciesKey": 2778035,
+    "genus": "Aloe",
+    "genusKey": 2770879,
+    "family": "Asphodelaceae",
+    "familyKey": 4259209,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -43,6 +98,17 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "bromeliaceae": {
+    "species": null,
+    "speciesKey": null,
+    "genus": null,
+    "genusKey": null,
+    "family": null,
+    "familyKey": null,
+    "rank": "KINGDOM",
+    "status": "ACCEPTED",
+    "matchType": "HIGHERRANK"
+  },
   "chlorophytum comosum": {
     "species": "Chlorophytum comosum",
     "speciesKey": 2774846,
@@ -54,6 +120,17 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "chrysanthemum coronarium": {
+    "species": "Glebionis coronaria",
+    "speciesKey": 7627205,
+    "genus": "Glebionis",
+    "genusKey": 3141100,
+    "family": "Asteraceae",
+    "familyKey": 3065,
+    "rank": "SPECIES",
+    "status": "SYNONYM",
+    "matchType": "EXACT"
+  },
   "crassula ovata": {
     "species": "Crassula ovata",
     "speciesKey": 5362063,
@@ -61,6 +138,17 @@
     "genusKey": 2985823,
     "family": "Crassulaceae",
     "familyKey": 2406,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "dianthus plumarius": {
+    "species": "Dianthus plumarius",
+    "speciesKey": 3085412,
+    "genus": "Dianthus",
+    "genusKey": 3085411,
+    "family": "Caryophyllaceae",
+    "familyKey": 2518,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -76,6 +164,28 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "digitalis ferruginea": {
+    "species": "Digitalis ferruginea",
+    "speciesKey": 5414991,
+    "genus": "Digitalis",
+    "genusKey": 3172032,
+    "family": "Plantaginaceae",
+    "familyKey": 2420,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "digitalis lutea": {
+    "species": "Digitalis lutea",
+    "speciesKey": 5414990,
+    "genus": "Digitalis",
+    "genusKey": 3172032,
+    "family": "Plantaginaceae",
+    "familyKey": 2420,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "digitalis purpurea": {
     "species": "Digitalis purpurea",
     "speciesKey": 5414995,
@@ -83,6 +193,39 @@
     "genusKey": 3172032,
     "family": "Plantaginaceae",
     "familyKey": 2420,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "dipsacus fullonum": {
+    "species": "Dipsacus fullonum",
+    "speciesKey": 8435025,
+    "genus": "Dipsacus",
+    "genusKey": 2888813,
+    "family": "Caprifoliaceae",
+    "familyKey": 6710,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "dracaena marginata": {
+    "species": "Dracaena marginata",
+    "speciesKey": 10818704,
+    "genus": "Dracaena",
+    "genusKey": 2752062,
+    "family": "Asparagaceae",
+    "familyKey": 7683,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "dracaena reflexa": {
+    "species": "Dracaena reflexa",
+    "speciesKey": 5304436,
+    "genus": "Dracaena",
+    "genusKey": 2752062,
+    "family": "Asparagaceae",
+    "familyKey": 7683,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -98,6 +241,17 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "epiphyllum oxypetalum": {
+    "species": "Epiphyllum oxypetalum",
+    "speciesKey": 5384031,
+    "genus": "Epiphyllum",
+    "genusKey": 3084180,
+    "family": "Cactaceae",
+    "familyKey": 2519,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "epipremnum aureum": {
     "species": "Epipremnum aureum",
     "speciesKey": 2868323,
@@ -105,6 +259,61 @@
     "genusKey": 2868270,
     "family": "Araceae",
     "familyKey": 6979,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "epipremnum pinnatum": {
+    "species": "Epipremnum pinnatum",
+    "speciesKey": 2868272,
+    "genus": "Epipremnum",
+    "genusKey": 2868270,
+    "family": "Araceae",
+    "familyKey": 6979,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "eriophyllum lanatum": {
+    "species": "Eriophyllum lanatum",
+    "speciesKey": 3130472,
+    "genus": "Eriophyllum",
+    "genusKey": 3130444,
+    "family": "Asteraceae",
+    "familyKey": 3065,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "ficus benghalensis": {
+    "species": "Ficus benghalensis",
+    "speciesKey": 5361919,
+    "genus": "Ficus",
+    "genusKey": 2984588,
+    "family": "Moraceae",
+    "familyKey": 6640,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "ficus benjamina": {
+    "species": "Ficus benjamina",
+    "speciesKey": 5361932,
+    "genus": "Ficus",
+    "genusKey": 2984588,
+    "family": "Moraceae",
+    "familyKey": 6640,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "ficus carica": {
+    "species": "Ficus carica",
+    "speciesKey": 5361909,
+    "genus": "Ficus",
+    "genusKey": 2984588,
+    "family": "Moraceae",
+    "familyKey": 6640,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -123,6 +332,28 @@
   "ficus lyrata": {
     "species": "Ficus lyrata",
     "speciesKey": 5361899,
+    "genus": "Ficus",
+    "genusKey": 2984588,
+    "family": "Moraceae",
+    "familyKey": 6640,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "ficus microcarpa": {
+    "species": "Ficus microcarpa",
+    "speciesKey": 7467639,
+    "genus": "Ficus",
+    "genusKey": 2984588,
+    "family": "Moraceae",
+    "familyKey": 6640,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "ficus religiosa": {
+    "species": "Ficus religiosa",
+    "speciesKey": 5361935,
     "genus": "Ficus",
     "genusKey": 2984588,
     "family": "Moraceae",
@@ -153,9 +384,53 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "helianthus petiolaris": {
+    "species": "Helianthus petiolaris",
+    "speciesKey": 3119225,
+    "genus": "Helianthus",
+    "genusKey": 3119134,
+    "family": "Asteraceae",
+    "familyKey": 3065,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "helianthus pumilus": {
+    "species": "Helianthus pumilus",
+    "speciesKey": 3119245,
+    "genus": "Helianthus",
+    "genusKey": 3119134,
+    "family": "Asteraceae",
+    "familyKey": 3065,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "hibiscus mutabilis": {
+    "species": "Hibiscus mutabilis",
+    "speciesKey": 3152555,
+    "genus": "Hibiscus",
+    "genusKey": 3152542,
+    "family": "Malvaceae",
+    "familyKey": 6685,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "hibiscus rosa-sinensis": {
     "species": "Hibiscus rosa-sinensis",
     "speciesKey": 3152559,
+    "genus": "Hibiscus",
+    "genusKey": 3152542,
+    "family": "Malvaceae",
+    "familyKey": 6685,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "hibiscus syriacus": {
+    "species": "Hibiscus syriacus",
+    "speciesKey": 3152583,
     "genus": "Hibiscus",
     "genusKey": 3152542,
     "family": "Malvaceae",
@@ -175,6 +450,39 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "hydrangea paniculata": {
+    "species": "Hydrangea paniculata",
+    "speciesKey": 2985995,
+    "genus": "Hydrangea",
+    "genusKey": 2985983,
+    "family": "Hydrangeaceae",
+    "familyKey": 6667,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "hydrangea serrata": {
+    "species": "Hydrangea serrata",
+    "speciesKey": 7319016,
+    "genus": "Hydrangea",
+    "genusKey": 2985983,
+    "family": "Hydrangeaceae",
+    "familyKey": 6667,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "laurus nobilis": {
+    "species": "Laurus nobilis",
+    "speciesKey": 3034015,
+    "genus": "Laurus",
+    "genusKey": 2988444,
+    "family": "Lauraceae",
+    "familyKey": 6688,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "lavandula angustifolia": {
     "species": "Lavandula angustifolia",
     "speciesKey": 2927305,
@@ -182,6 +490,39 @@
     "genusKey": 2927302,
     "family": "Lamiaceae",
     "familyKey": 2497,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "lavandula latifolia": {
+    "species": "Lavandula latifolia",
+    "speciesKey": 2927304,
+    "genus": "Lavandula",
+    "genusKey": 2927302,
+    "family": "Lamiaceae",
+    "familyKey": 2497,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "lavandula stoechas": {
+    "species": "Lavandula stoechas",
+    "speciesKey": 2927303,
+    "genus": "Lavandula",
+    "genusKey": 2927302,
+    "family": "Lamiaceae",
+    "familyKey": 2497,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "leucanthemum vulgare": {
+    "species": "Leucanthemum vulgare",
+    "speciesKey": 8848598,
+    "genus": "Leucanthemum",
+    "genusKey": 7684028,
+    "family": "Asteraceae",
+    "familyKey": 3065,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -197,6 +538,39 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "musa acuminata": {
+    "species": "Musa acuminata",
+    "speciesKey": 2762680,
+    "genus": "Musa",
+    "genusKey": 2760990,
+    "family": "Musaceae",
+    "familyKey": 4686,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "musa balbisiana": {
+    "species": "Musa balbisiana",
+    "speciesKey": 2762950,
+    "genus": "Musa",
+    "genusKey": 2760990,
+    "family": "Musaceae",
+    "familyKey": 4686,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "musa paradisiaca": {
+    "species": "Musa paradisiaca",
+    "speciesKey": 2762752,
+    "genus": "Musa",
+    "genusKey": 2760990,
+    "family": "Musaceae",
+    "familyKey": 4686,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "ocimum basilicum": {
     "species": "Ocimum basilicum",
     "speciesKey": 2927096,
@@ -208,9 +582,42 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "ocimum tenuiflorum": {
+    "species": "Ocimum tenuiflorum",
+    "speciesKey": 2927100,
+    "genus": "Ocimum",
+    "genusKey": 2874693,
+    "family": "Lamiaceae",
+    "familyKey": 2497,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "papaver hybridum": {
+    "species": "Roemeria hispida",
+    "speciesKey": 9587676,
+    "genus": "Roemeria",
+    "genusKey": 2888427,
+    "family": "Papaveraceae",
+    "familyKey": 2422,
+    "rank": "SPECIES",
+    "status": "SYNONYM",
+    "matchType": "EXACT"
+  },
   "papaver rhoeas": {
     "species": "Papaver rhoeas",
     "speciesKey": 2888443,
+    "genus": "Papaver",
+    "genusKey": 2888431,
+    "family": "Papaveraceae",
+    "familyKey": 2422,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "papaver somniferum": {
+    "species": "Papaver somniferum",
+    "speciesKey": 2888439,
     "genus": "Papaver",
     "genusKey": 2888431,
     "family": "Papaveraceae",
@@ -241,6 +648,28 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "quercus cerris": {
+    "species": "Quercus cerris",
+    "speciesKey": 2880580,
+    "genus": "Quercus",
+    "genusKey": 2877951,
+    "family": "Fagaceae",
+    "familyKey": 4689,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "quercus petraea": {
+    "species": "Quercus petraea",
+    "speciesKey": 2880130,
+    "genus": "Quercus",
+    "genusKey": 2877951,
+    "family": "Fagaceae",
+    "familyKey": 4689,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "quercus robur": {
     "species": "Quercus robur",
     "speciesKey": 2878688,
@@ -263,9 +692,31 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "rosa acicularis": {
+    "species": "Rosa acicularis",
+    "speciesKey": 3002193,
+    "genus": "Rosa",
+    "genusKey": 8395064,
+    "family": "Rosaceae",
+    "familyKey": 5015,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "rosa canina": {
     "species": "Rosa canina",
     "speciesKey": 3002461,
+    "genus": "Rosa",
+    "genusKey": 8395064,
+    "family": "Rosaceae",
+    "familyKey": 5015,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "rosa rubiginosa": {
+    "species": "Rosa rubiginosa",
+    "speciesKey": 8174785,
     "genus": "Rosa",
     "genusKey": 8395064,
     "family": "Rosaceae",
@@ -281,6 +732,50 @@
     "genusKey": 2926981,
     "family": "Lamiaceae",
     "familyKey": 2497,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "sansevieria trifasciata": {
+    "species": "Dracaena trifasciata",
+    "speciesKey": 11041822,
+    "genus": "Dracaena",
+    "genusKey": 2752062,
+    "family": "Asparagaceae",
+    "familyKey": 7683,
+    "rank": "SPECIES",
+    "status": "SYNONYM",
+    "matchType": "EXACT"
+  },
+  "smilax rotundifolia": {
+    "species": "Smilax rotundifolia",
+    "speciesKey": 5295375,
+    "genus": "Smilax",
+    "genusKey": 2740627,
+    "family": "Smilacaceae",
+    "familyKey": 7702,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "strelitzia juncea": {
+    "species": "Strelitzia juncea",
+    "speciesKey": 11063870,
+    "genus": "Strelitzia",
+    "genusKey": 7668300,
+    "family": "Strelitziaceae",
+    "familyKey": 8799,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "strelitzia nicolai": {
+    "species": "Strelitzia nicolai",
+    "speciesKey": 2763112,
+    "genus": "Strelitzia",
+    "genusKey": 7668300,
+    "family": "Strelitziaceae",
+    "familyKey": 8799,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -307,6 +802,17 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "tecoma stans": {
+    "species": "Tecoma stans",
+    "speciesKey": 3172492,
+    "genus": "Tecoma",
+    "genusKey": 3172488,
+    "family": "Bignoniaceae",
+    "familyKey": 6655,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "thaumatophyllum bipinnatifidum": {
     "species": "Thaumatophyllum bipinnatifidum",
     "speciesKey": 9689104,
@@ -314,6 +820,39 @@
     "genusKey": 2870394,
     "family": "Araceae",
     "familyKey": 6979,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "tillandsia usneoides": {
+    "species": "Tillandsia usneoides",
+    "speciesKey": 2695149,
+    "genus": "Tillandsia",
+    "genusKey": 8279994,
+    "family": "Bromeliaceae",
+    "familyKey": 3740,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "tradescantia fluminensis": {
+    "species": "Tradescantia fluminensis",
+    "speciesKey": 2765156,
+    "genus": "Tradescantia",
+    "genusKey": 2765096,
+    "family": "Commelinaceae",
+    "familyKey": 2763195,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "tradescantia pallida": {
+    "species": "Tradescantia pallida",
+    "speciesKey": 2765221,
+    "genus": "Tradescantia",
+    "genusKey": 2765096,
+    "family": "Commelinaceae",
+    "familyKey": 2763195,
     "rank": "SPECIES",
     "status": "ACCEPTED",
     "matchType": "EXACT"
@@ -329,6 +868,17 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "trifolium hybridum": {
+    "species": "Trifolium hybridum",
+    "speciesKey": 6109535,
+    "genus": "Trifolium",
+    "genusKey": 2973363,
+    "family": "Fabaceae",
+    "familyKey": 5386,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "trifolium pratense": {
     "species": "Trifolium pratense",
     "speciesKey": 8324121,
@@ -340,9 +890,53 @@
     "status": "ACCEPTED",
     "matchType": "EXACT"
   },
+  "trifolium repens": {
+    "species": "Trifolium repens",
+    "speciesKey": 5358748,
+    "genus": "Trifolium",
+    "genusKey": 2973363,
+    "family": "Fabaceae",
+    "familyKey": 5386,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "tussilago farfara": {
+    "species": "Tussilago farfara",
+    "speciesKey": 3149879,
+    "genus": "Tussilago",
+    "genusKey": 3149878,
+    "family": "Asteraceae",
+    "familyKey": 3065,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
   "urtica dioica": {
     "species": "Urtica dioica",
     "speciesKey": 7960979,
+    "genus": "Urtica",
+    "genusKey": 2984391,
+    "family": "Urticaceae",
+    "familyKey": 6639,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "urtica pilulifera": {
+    "species": "Urtica pilulifera",
+    "speciesKey": 5670646,
+    "genus": "Urtica",
+    "genusKey": 2984391,
+    "family": "Urticaceae",
+    "familyKey": 6639,
+    "rank": "SPECIES",
+    "status": "ACCEPTED",
+    "matchType": "EXACT"
+  },
+  "urtica urens": {
+    "species": "Urtica urens",
+    "speciesKey": 5361815,
     "genus": "Urtica",
     "genusKey": 2984391,
     "family": "Urticaceae",
