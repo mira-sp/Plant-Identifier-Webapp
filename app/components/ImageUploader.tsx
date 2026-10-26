@@ -1,18 +1,23 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, type ChangeEvent, type DragEvent, type MouseEvent } from 'react'
 import Image from 'next/image'
 
-export default function ImageUploader({ onImageUpload, isLoading }) {
-  const [preview, setPreview] = useState(null)
+type ImageUploaderProps = {
+  onImageUpload: (file: File | null) => void
+  isLoading: boolean
+}
+
+export default function ImageUploader({ onImageUpload, isLoading }: ImageUploaderProps) {
+  const [preview, setPreview] = useState<string | null>(null)
   const [dragActive, setDragActive] = useState(false)
   const [cameraActive, setCameraActive] = useState(false)
-  const [cameraStream, setCameraStream] = useState(null)
+  const [cameraStream, setCameraStream] = useState<MediaStream | null>(null)
   const [cameraPermissionDenied, setCameraPermissionDenied] = useState(false)
   
-  const fileInputRef = useRef(null)
-  const videoRef = useRef(null)
-  const canvasRef = useRef(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
   // Clean up camera stream when component unmounts
   useEffect(() => {
@@ -37,7 +42,7 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
     }
   }, [preview])
 
-  const handleFile = (file) => {
+  const handleFile = (file: File | undefined) => {
     if (!file) return
 
     // Check if the file is an image
@@ -53,12 +58,12 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
     onImageUpload(file)
   }
 
-  const handleChange = (e) => {
-    const file = e.target.files[0]
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
     handleFile(file)
   }
 
-  const handleDrag = (e) => {
+  const handleDrag = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     
@@ -69,18 +74,16 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
     }
   }
 
-  const handleDrop = (e) => {
+  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault()
     e.stopPropagation()
     setDragActive(false)
     
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFile(e.dataTransfer.files[0])
-    }
+    handleFile(e.dataTransfer.files[0])
   }
 
   const handleFileUploadClick = () => {
-    fileInputRef.current.click()
+    fileInputRef.current?.click()
   }
 
   const startCamera = async () => {
@@ -122,10 +125,13 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
     
     // Draw the current video frame to the canvas
     const ctx = canvas.getContext('2d')
+    if (!ctx) return
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
     
     // Convert canvas to blob
     canvas.toBlob((blob) => {
+      if (!blob) return
+
       // Create a File object from the blob
       const capturedImage = new File([blob], 'captured-plant.jpg', { type: 'image/jpeg' })
       
@@ -137,10 +143,8 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
     }, 'image/jpeg', 0.95) // High quality JPEG
   }
 
-  const resetImage = (e) => {
-    if (e) {
-      e.stopPropagation()
-    }
+  const resetImage = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation()
     setPreview(null)
     onImageUpload(null)
   }

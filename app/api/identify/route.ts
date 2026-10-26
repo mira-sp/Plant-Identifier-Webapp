@@ -1,34 +1,9 @@
 import { NextResponse } from 'next/server';
+import { REGIONS, plantResultJsonSchema, plantResultSchema, type IdentifyError, type PlantResult } from '@/lib/schema';
 
 // Local Ollama server; images never leave this machine
 const OLLAMA_HOST = process.env.OLLAMA_HOST || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'qwen2.5vl:7b';
-
-const REGIONS = ['North America', 'South America', 'Europe', 'Africa', 'Asia', 'Australia'];
-
-// JSON schema the model's answer must follow (Ollama structured outputs)
-const plantSchema = {
-  type: 'object',
-  properties: {
-    name: { type: 'string' },
-    scientificName: { type: 'string' },
-    description: { type: 'string' },
-    careInfo: {
-      type: 'object',
-      properties: {
-        light: { type: 'string' },
-        water: { type: 'string' },
-        temperature: { type: 'string' },
-        soil: { type: 'string' },
-        humidity: { type: 'string' }
-      },
-      required: ['light', 'water', 'temperature', 'soil', 'humidity']
-    },
-    funFacts: { type: 'array', items: { type: 'string' } },
-    nativeRegions: { type: 'array', items: { type: 'string', enum: REGIONS } }
-  },
-  required: ['name', 'scientificName', 'description', 'careInfo', 'funFacts', 'nativeRegions']
-};
 
 const prompt = `
   Identify the plant in this image.
@@ -43,12 +18,12 @@ const prompt = `
   Respond with JSON only.
 `;
 
-export async function POST(request) {
+export async function POST(request: Request): Promise<NextResponse<PlantResult | IdentifyError>> {
   try {
     const formData = await request.formData();
     const imageFile = formData.get('image');
 
-    if (!imageFile) {
+    if (!(imageFile instanceof File)) {
       return NextResponse.json(
         { error: 'No image provided' },
         { status: 400 }
@@ -57,7 +32,7 @@ export async function POST(request) {
 
     const base64Data = Buffer.from(await imageFile.arrayBuffer()).toString('base64');
 
-    let ollamaResponse;
+    let ollamaResponse: Response;
     try {
       ollamaResponse = await fetch(`${OLLAMA_HOST}/api/chat`, {
         method: 'POST',
@@ -65,7 +40,7 @@ export async function POST(request) {
         body: JSON.stringify({
           model: OLLAMA_MODEL,
           messages: [{ role: 'user', content: prompt, images: [base64Data] }],
-          format: plantSchema,
+          format: plantResultJsonSchema,
           stream: false,
           options: { temperature: 0 }
         })
@@ -87,11 +62,11 @@ export async function POST(request) {
       return NextResponse.json({ error }, { status: 502 });
     }
 
-    const { message } = await ollamaResponse.json();
+    const { message } = (await ollamaResponse.json()) as { message?: { content?: string } };
 
+    let raw: unknown;
     try {
-      const plantData = JSON.parse(message.content);
-      return NextResponse.json(plantData);
+      raw = JSON.parse(message?.content ?? '');
     } catch (parseError) {
       console.error('Error parsing plant data:', parseError, message?.content);
       return NextResponse.json(
@@ -99,6 +74,17 @@ export async function POST(request) {
         { status: 500 }
       );
     }
+
+    const parsed = plantResultSchema.safeParse(raw);
+    if (!parsed.success) {
+      console.error('Model output failed validation:', parsed.error.issues);
+      return NextResponse.json(
+        { error: 'The local AI model returned incomplete plant data. Please try again.' },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json(parsed.data);
   } catch (error) {
     console.error('Plant identification error:', error);
     return NextResponse.json(

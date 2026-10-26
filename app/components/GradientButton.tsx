@@ -1,6 +1,33 @@
 'use client';
 
-import React from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+
+// Base styles
+const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95';
+
+// Variant styles
+const variantStyles = {
+  primary: 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg focus:ring-primary-500',
+  secondary: 'bg-white text-primary-600 border border-primary-200 hover:bg-primary-50 hover:shadow-md focus:ring-primary-500',
+  outline: 'bg-transparent text-primary-600 border border-primary-600 hover:bg-primary-50 hover:shadow-sm focus:ring-primary-500',
+  ghost: 'bg-transparent text-primary-600 hover:bg-primary-50 focus:ring-primary-500',
+  danger: 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg focus:ring-red-500',
+  dark: 'bg-dark-800 text-white hover:bg-dark-900 hover:shadow-lg focus:ring-dark-700',
+};
+
+// Size styles
+const sizeStyles = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-4 py-2',
+  lg: 'px-6 py-3 text-lg',
+  xl: 'px-8 py-4 text-xl',
+};
+
+type ButtonProps = ComponentPropsWithoutRef<'button'> & {
+  variant?: keyof typeof variantStyles;
+  size?: keyof typeof sizeStyles;
+  isLoading?: boolean;
+};
 
 const Button = ({ 
   children, 
@@ -9,28 +36,7 @@ const Button = ({
   className = '', 
   isLoading = false,
   ...props 
-}) => {
-  // Base styles
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95';
-  
-  // Variant styles
-  const variantStyles = {
-    primary: 'bg-primary-600 text-white hover:bg-primary-700 hover:shadow-lg focus:ring-primary-500',
-    secondary: 'bg-white text-primary-600 border border-primary-200 hover:bg-primary-50 hover:shadow-md focus:ring-primary-500',
-    outline: 'bg-transparent text-primary-600 border border-primary-600 hover:bg-primary-50 hover:shadow-sm focus:ring-primary-500',
-    ghost: 'bg-transparent text-primary-600 hover:bg-primary-50 focus:ring-primary-500',
-    danger: 'bg-red-600 text-white hover:bg-red-700 hover:shadow-lg focus:ring-red-500',
-    dark: 'bg-dark-800 text-white hover:bg-dark-900 hover:shadow-lg focus:ring-dark-700',
-  };
-  
-  // Size styles
-  const sizeStyles = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2',
-    lg: 'px-6 py-3 text-lg',
-    xl: 'px-8 py-4 text-xl',
-  };
-  
+}: ButtonProps) => {
   // Loading state
   const loadingMarkup = (
     <svg 

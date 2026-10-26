@@ -8,13 +8,14 @@ import PlantInfo from "./components/PlantInfo";
 import LoadingState from "./components/LoadingState";
 import PricingBox from "./components/PricingBoxes";
 import ContactForm from "./components/ContactForm";
+import type { IdentifyError, PlantResult } from "@/lib/schema";
 
 export default function Home() {
-  const [plantData, setPlantData] = useState(null);
+  const [plantData, setPlantData] = useState<PlantResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleImageUpload = async (file) => {
+  const handleImageUpload = async (file: File | null) => {
     if (!file) {
       setPlantData(null);
       setError(null);
@@ -34,16 +35,16 @@ export default function Home() {
         body: formData,
       });
 
-      const data = await response.json();
+      const data: PlantResult | IdentifyError = await response.json();
 
-      if (!response.ok) {
+      if ("error" in data) {
         throw new Error(data.error);
       }
 
       setPlantData(data);
     } catch (err) {
       console.error("Error identifying plant:", err);
-      setError(err.message || "Sorry, we couldn't identify your plant. Please try again.");
+      setError((err instanceof Error && err.message) || "Sorry, we couldn't identify your plant. Please try again.");
     } finally {
       setIsLoading(false);
     }

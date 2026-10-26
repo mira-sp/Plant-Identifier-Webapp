@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { Inter, Outfit } from 'next/font/google'
 import './globals.css'
 
@@ -14,13 +16,13 @@ const inter = Inter({
   display: 'swap',
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'PlantID - Instant Plant Identification with AI',
   description: 'Upload photos of plants and get instant identification using advanced AI technology',
   keywords: 'plant identification, plant app, plant care, gardening, house plants, AI',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${outfit.variable} ${inter.variable} font-sans antialiased`}>

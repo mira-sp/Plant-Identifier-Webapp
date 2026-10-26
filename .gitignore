@@ -37,3 +37,6 @@ yarn-error.log*
 /serve-test/
 /.config/
 /cache/
+
+# typescript
+*.tsbuildinfo

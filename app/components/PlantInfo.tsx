@@ -1,14 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import PlantMap from './PlantMap' 
+import PlantMap from './PlantMap'
+import type { PlantResult } from '@/lib/schema'
 
-export default function PlantInfo({ plantData }) {
+export default function PlantInfo({ plantData }: { plantData: PlantResult }) {
   const [activeTab, setActiveTab] = useState('overview')
   
-  if (!plantData) return null
-
-  const { name, scientificName, description, careInfo = {}, funFacts = [], nativeRegions = [] } = plantData
+  const { name, scientificName, description, careInfo, funFacts, nativeRegions } = plantData
   
   const tabs = [
     { id: 'overview', label: 'Overview' },
@@ -64,7 +63,7 @@ export default function PlantInfo({ plantData }) {
               {Object.entries(careInfo).map(([key, value]) => (
                 <li key={key} className="flex">
                   <span className="font-medium text-gray-700 mr-2">{key}:</span>
-                  <span className="text-gray-600">{typeof value === 'object' ? JSON.stringify(value) : value}</span>
+                  <span className="text-gray-600">{value}</span>
                 </li>
               ))}
             </ul>

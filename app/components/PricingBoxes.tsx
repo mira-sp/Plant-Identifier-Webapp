@@ -1,4 +1,3 @@
-// components/PricingBoxes.jsx
 export default function PricingBoxes() {
   return (
     <section id="about" className="py-12 px-6">
