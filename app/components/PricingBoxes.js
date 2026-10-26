@@ -17,9 +17,9 @@ export default function PricingBoxes() {
           </div>
           <div className="bg-white shadow-lg p-6 rounded-lg border w-full md:w-1/3 transition-transform duration-300 hover:scale-[1.01]">
             <h3 className="text-lg font-bold">AI Analysis</h3>
-            <p className="text-2xl font-bold">APIs</p>
+            <p className="text-2xl font-bold">Local AI</p>
             <ul className="text-sm mt-2">
-              <li>✔ Google Gemini API</li>
+              <li>✔ Runs on your machine (Ollama)</li>
               <li>✔ Identifies the plant </li>
             </ul>
           </div>

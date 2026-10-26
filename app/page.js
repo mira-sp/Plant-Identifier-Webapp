@@ -34,15 +34,16 @@ export default function Home() {
         body: formData,
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to identify plant");
+        throw new Error(data.error);
       }
 
-      const data = await response.json();
       setPlantData(data);
     } catch (err) {
       console.error("Error identifying plant:", err);
-      setError("Sorry, we couldn't identify your plant. Please try again.");
+      setError(err.message || "Sorry, we couldn't identify your plant. Please try again.");
     } finally {
       setIsLoading(false);
     }
