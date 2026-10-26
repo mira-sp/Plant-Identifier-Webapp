@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
+const navItems = [
+  { label: 'Home', href: '/#home' },
+  { label: 'How It Works', href: '/#about' },
+]
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -56,15 +60,15 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
-              {['Home', 'About', 'Features', 'Pricing'].map((item, i) => (
-                <li key={item}>
+              {navItems.map((item) => (
+                <li key={item.label}>
                   <Link 
-                    href={`/#${item.toLowerCase()}`} 
+                    href={item.href} 
                     className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
                       isScrolled ? 'text-foreground' : 'text-foreground'
                     }`}
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -118,14 +122,14 @@ export default function Header() {
       >
         <nav className="flex flex-col items-center">
           <ul className="space-y-8 text-center">
-            {['Home', 'About', 'Features', 'Pricing'].map((item, i) => (
-              <li key={item} className={`transform transition-all duration-300 delay-${i * 100}`}>
+            {navItems.map((item) => (
+              <li key={item.label} className="transform transition-all duration-300">
                 <Link 
-                  href={`/#${item.toLowerCase()}`} 
+                  href={item.href} 
                   className="text-2xl font-medium text-foreground hover:text-primary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               </li>
             ))}

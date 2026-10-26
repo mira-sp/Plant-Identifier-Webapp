@@ -52,7 +52,7 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-grow">
-        <section className="py-12 px-6">
+        <section id="home" className="py-12 px-6">
           <div className="container mx-auto text-center mb-12 mt-24">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Identify Any Plant Instantly
@@ -63,7 +63,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="container mx-auto max-w-4xl">
+          <div id="upload" className="container mx-auto max-w-4xl scroll-mt-24">
             <ImageUploader
               onImageUpload={handleImageUpload}
               isLoading={isLoading}

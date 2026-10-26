@@ -19,7 +19,7 @@ export default function PricingBoxes() {
             <h3 className="text-lg font-bold">AI Analysis</h3>
             <p className="text-2xl font-bold">APIs</p>
             <ul className="text-sm mt-2">
-              <li>✔ Google Gemenini API</li>
+              <li>✔ Google Gemini API</li>
               <li>✔ Identifies the plant </li>
             </ul>
           </div>

@@ -22,9 +22,8 @@ export default function ContactForm() {
         <input type="text" name="name" placeholder="Name" onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />
         <input type="email" name="email" placeholder="Email" onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />
         <textarea name="message" placeholder="Tell me about your project..." onChange={handleChange} className="w-full p-2 mb-2 border rounded" required />
-        
+        <GradientButton type="submit">Send</GradientButton>
       </form>
-      <GradientButton />
     </div>
   );
 }

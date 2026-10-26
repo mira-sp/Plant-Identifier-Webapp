@@ -32,3 +32,8 @@ yarn-error.log*
 # vercel
 .vercel
 
+
+# local tooling leftovers
+/serve-test/
+/.config/
+/cache/

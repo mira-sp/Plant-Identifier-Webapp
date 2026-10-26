@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -20,9 +22,11 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
+          ...colors.green,
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        dark: colors.slate,
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -56,7 +60,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         outfit: ["var(--font-outfit)"],
-        inter: ["Inter", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

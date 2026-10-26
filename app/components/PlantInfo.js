@@ -8,7 +8,7 @@ export default function PlantInfo({ plantData }) {
   
   if (!plantData) return null
 
-  const { name, scientificName, description, careInfo, funFacts , nativeRegions = [] }= plantData
+  const { name, scientificName, description, careInfo = {}, funFacts = [], nativeRegions = [] } = plantData
   
   const tabs = [
     { id: 'overview', label: 'Overview' },
@@ -64,7 +64,7 @@ export default function PlantInfo({ plantData }) {
               {Object.entries(careInfo).map(([key, value]) => (
                 <li key={key} className="flex">
                   <span className="font-medium text-gray-700 mr-2">{key}:</span>
-                  <span className="text-gray-600">{value}</span>
+                  <span className="text-gray-600">{typeof value === 'object' ? JSON.stringify(value) : value}</span>
                 </li>
               ))}
             </ul>

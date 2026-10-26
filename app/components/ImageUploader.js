@@ -23,24 +23,34 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
     }
   }, [cameraStream])
 
+  // Attach the stream once the <video> element has been rendered
+  useEffect(() => {
+    if (cameraActive && cameraStream && videoRef.current) {
+      videoRef.current.srcObject = cameraStream
+    }
+  }, [cameraActive, cameraStream])
+
+  // Release the previous preview URL when it changes or on unmount
+  useEffect(() => {
+    return () => {
+      if (preview) URL.revokeObjectURL(preview)
+    }
+  }, [preview])
+
   const handleFile = (file) => {
     if (!file) return
-    
+
     // Check if the file is an image
     if (!file.type.startsWith('image/')) {
       alert('Please upload an image file')
       return
     }
-    
+
     // Create URL for preview
-    const objectUrl = URL.createObjectURL(file)
-    setPreview(objectUrl)
-    
+    setPreview(URL.createObjectURL(file))
+
     // Send to parent component
     onImageUpload(file)
-    
-    // Clean up
-    return () => URL.revokeObjectURL(objectUrl)
   }
 
   const handleChange = (e) => {
@@ -86,11 +96,6 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
       setCameraStream(stream)
       setCameraActive(true)
       setCameraPermissionDenied(false)
-      
-      // Connect the stream to the video element
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream
-      }
     } catch (err) {
       console.error('Camera error:', err)
       setCameraPermissionDenied(true)
@@ -173,16 +178,14 @@ export default function ImageUploader({ onImageUpload, isLoading }) {
           </div>
         </div>
       ) : preview ? (
-        <div 
-          className="card p-4 text-center"
-          onClick={handleFileUploadClick}
-        >
+        <div className="card p-4 text-center">
           <div className="relative">
             <div className="relative h-64 w-full rounded-lg overflow-hidden mb-4">
               <Image
                 src={preview}
                 alt="Plant preview"
                 fill
+                unoptimized
                 style={{ objectFit: 'contain' }}
               />
             </div>
